@@ -8,6 +8,7 @@ $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['meta_description'] = 'Learn more about this Yii2-powered application.';
 $this->params['meta_keywords'] = 'yii, yii2, about, php, framework';
+$data = \app\models\Monstertest::findOne(1)
 ?>
 <div class="site-about d-flex align-items-center justify-content-center text-center">
     <div class="site-about-content mx-auto">
@@ -19,6 +20,8 @@ $this->params['meta_keywords'] = 'yii, yii2, about, php, framework';
                 <code class="d-block mt-2"><?= __FILE__ ?></code>
             <?php endif; ?>
         </p>
+        <p>
+            Found One Monster <?= $data->name ?>        </p>
 
         <?= Html::a(
             'Go to Homepage',
