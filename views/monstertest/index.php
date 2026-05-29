@@ -10,8 +10,10 @@ use yii\grid\GridView;
 /** @var app\models\MonstertestSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Monstertests';
+$this->title = 'Monstertestssssssss';
 $this->params['breadcrumbs'][] = $this->title;
+$this->registerMetaTag(['name'=>'description','content'=>'Monstertestsssssssss']);
+$this->registerJsFile('@web/js/monstertest.js', ['position' => \yii\web\View::POS_END]); //this is for js file
 ?>
 <div class="monstertest-index">
 
@@ -29,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+//            'id',
             'name',
             'age',
             'gender',
