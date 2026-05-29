@@ -45,7 +45,7 @@ class LoginForm extends Model
      * This method serves as the inline validation for password.
      *
      * @param string $attribute the attribute currently being validated
-     * @param array $params the additional name-value pairs given in the rule
+     * @param array|null $params the additional name-value pairs given in the rule
      */
     public function validatePassword(string $attribute, array|null $params): void
     {
@@ -53,7 +53,7 @@ class LoginForm extends Model
             $user = $this->getUser();
 
             if (!$user || !$this->security->validatePassword($this->password, $user->passwordHash)) {
-                $this->addError($attribute, 'Incorrect username or password.');
+                $this->addError($attribute, 'Incorrect username or passwordafasfsafaf.');
             }
         }
     }
