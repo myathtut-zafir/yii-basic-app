@@ -94,4 +94,8 @@ class User extends BaseObject implements IdentityInterface
     {
         return $this->authKey === $authKey;
     }
+    public function validatePassword(string $password): bool
+    {
+        return $this->passwordHash === $password;
+    }
 }
