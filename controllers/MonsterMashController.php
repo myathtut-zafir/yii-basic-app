@@ -3,10 +3,13 @@
 namespace app\controllers;
 
 use app\models\Monstermash;
+use Yii;
+use yii\base\Exception;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
 
 /**
  * MonsterMashController implements the CRUD actions for Monstermash model.
@@ -73,9 +76,10 @@ class MonsterMashController extends Controller
     /**
      * Creates a new Monstermash model.
      * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
+     * @return string|Response
+     * @throws Exception
      */
-    public function actionCreate()
+    public function actionCreate(): Response|string
     {
         $model = new Monstermash();
 
@@ -96,7 +100,7 @@ class MonsterMashController extends Controller
      * Updates an existing Monstermash model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
-     * @return string|\yii\web\Response
+     * @return string|Response
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
@@ -116,7 +120,7 @@ class MonsterMashController extends Controller
      * Deletes an existing Monstermash model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
-     * @return \yii\web\Response
+     * @return Response
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)

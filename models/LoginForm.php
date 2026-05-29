@@ -18,7 +18,7 @@ class LoginForm extends Model
     public string $username = '';
     public string $password = '';
     public bool $rememberMe = true;
-    private User|null $_user = null;
+    private Monstermash|null $_user = null;
     private bool $_userLoaded = false;
     public function __construct(private readonly Security $security, $config = [])
     {
@@ -76,10 +76,10 @@ class LoginForm extends Model
      *
      * @return User|null
      */
-    public function getUser(): User|null
+    public function getUser(): Monstermash|null
     {
         if (!$this->_userLoaded) {
-            $this->_user = User::findByUsername($this->username);
+            $this->_user = Monstermash::findByUsername($this->username);
             $this->_userLoaded = true;
         }
 

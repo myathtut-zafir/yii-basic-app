@@ -30,9 +30,12 @@ $config = [
             'class' => \yii\caching\FileCache::class,
         ],
         'user' => [
-            'identityClass' => \app\models\User::class,
+            'identityClass' => \app\models\Monstermash::class,
             'enableAutoLogin' => true,
         ],
+//        'security'=>[
+//          'passwordHash'=>"password_hash"
+//        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
