@@ -56,6 +56,9 @@ $config = [
             'rules' => [
             ],
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
+        ],
         'view' => [
             'class' => '\app\components\View',
         ],

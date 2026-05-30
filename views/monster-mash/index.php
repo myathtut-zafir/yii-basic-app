@@ -34,7 +34,12 @@ $this->params['breadcrumbs'][] = $this->title;
             //'password',
             //'auth_key',
             [
-                'class' => ActionColumn::className(),
+                'class' => ActionColumn::class,
+                 'visibleButtons' => [
+                     'update' => function ($model,$key,$index) {
+                         return Yii::$app->user->can('monstermash/update');
+                     },
+                 ],
                 'urlCreator' => function ($action, Monstermash $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
                  }

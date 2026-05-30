@@ -32,13 +32,13 @@ class MonsterMashController extends Controller
                     ],
                 ],
                 'access' => [
-                    'class'=>AccessControl::class,
-                    'only'=>['delete','update'],
+                    'class' => AccessControl::class,
+                    'only' => ['delete', 'update'],
                     'rules' => [
                         [
                             'allow' => true,
-                            'actions' => ['delete','update'],
-                            'roles' => ['@'],
+                            'actions' => ['delete', 'update'],
+                            'roles' => ['monstermash/delete'], //update permission ရှိတဲ့သူပဲ delete and update လုပ်လို့ရမယ်။
                         ]
                     ]
                 ],
