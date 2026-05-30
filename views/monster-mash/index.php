@@ -8,6 +8,7 @@ use yii\grid\GridView;
 
 /** @var yii\web\View $this */
 /** @var yii\data\ActiveDataProvider $dataProvider */
+/** @var \app\models\MonsterSearch $search */
 
 $this->title = 'Monstermashes';
 $this->params['breadcrumbs'][] = $this->title;
@@ -19,7 +20,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Create Monstermash', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-
+    <?= $this->render('_search', [
+        'model' => $search,
+    ]) ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

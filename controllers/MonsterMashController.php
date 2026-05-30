@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Monstermash;
+use app\models\MonsterSearch;
 use Yii;
 use yii\base\Exception;
 use yii\data\ActiveDataProvider;
@@ -54,22 +55,26 @@ class MonsterMashController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Monstermash::find(),
-            /*
-            'pagination' => [
-                'pageSize' => 50
-            ],
-            'sort' => [
-                'defaultOrder' => [
-                    'id' => SORT_DESC,
-                ]
-            ],
-            */
-        ]);
+        $search = new MonsterSearch();
+        $dataProvider = $search->search($this->request->queryParams);
+
+//        $dataProvider = new ActiveDataProvider([
+//            'query' => Monstermash::find(),
+//            /*
+//            'pagination' => [
+//                'pageSize' => 50
+//            ],
+//            'sort' => [
+//                'defaultOrder' => [
+//                    'id' => SORT_DESC,
+//                ]
+//            ],
+//            */
+//        ]);
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
+            'search' => $search,
         ]);
     }
 
