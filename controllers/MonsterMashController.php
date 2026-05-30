@@ -6,6 +6,7 @@ use app\models\Monstermash;
 use Yii;
 use yii\base\Exception;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -25,11 +26,23 @@ class MonsterMashController extends Controller
             parent::behaviors(),
             [
                 'verbs' => [
-                    'class' => VerbFilter::className(),
+                    'class' => VerbFilter::class,
                     'actions' => [
                         'delete' => ['POST'],
                     ],
                 ],
+                'access' => [
+                    'class'=>AccessControl::class,
+                    'only'=>['delete','update'],
+                    'rules' => [
+                        [
+                            'allow' => true,
+                            'actions' => ['delete','update'],
+                            'roles' => ['@'],
+                        ]
+                    ]
+                ],
+
             ]
         );
     }
