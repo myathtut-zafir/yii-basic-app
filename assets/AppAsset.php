@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace app\assets;
 
+use hiqdev\assets\lightbox2\LightboxAsset;
 use yii\bootstrap5\BootstrapAsset;
 use yii\web\AssetBundle;
 use yii\web\View;
@@ -37,5 +38,6 @@ class AppAsset extends AssetBundle
     public $depends = [
         YiiAsset::class,
         BootstrapAsset::class,
+        LightboxAsset::class
     ];
 }
