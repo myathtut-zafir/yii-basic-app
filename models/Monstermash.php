@@ -40,6 +40,7 @@ class Monstermash extends \yii\db\ActiveRecord implements IdentityInterface
             [['age'], 'default', 'value' => null],
             [['age'], 'integer'],
             [['username', 'password', 'auth_key'], 'required'],
+            [['username',], 'unique'],
             [['auth_key'], 'string', 'max' => 32],
         ];
     }

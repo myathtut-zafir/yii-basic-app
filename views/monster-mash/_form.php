@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'age')->textInput() ?>
 
-    <?= $form->field($model, 'gender')->textInput() ?>
+    <?= $form->field($model, 'gender')->dropDownList(["m"=>"Male","f"=>"Female"]) ?>
 
     <?= $form->field($model, 'username')->textInput() ?>
 
